@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For off loop</title>
+  </head>
+  <body>
+  
+    <script>
+    function Human(name, gender, height, hair, color, nature) {
+            this.n = name;
+            this.g = gender;
+            this.ht = height;
+            this.h = hair;
+            this.c = color;
+            this.nt = nature;
+            this.final = function () {
+                document.write(this.n + " is a " + this.nt + " " + this.g + " who has " + this.c + " complexion and " + this.h + " hair and height is " + this.ht)
+            }
+        }
+
+        const Motwani = new Human('Rohit', 'boy', '5.9', 'black', 'fair', 'good')
+        const Motwani2 = new Human('Jimmy', 'boy', '5.10', 'black', 'fair', 'good')
+        Motwani.final();
+        document.write("<br>");
+        Motwani2.final();
+
+        document.write("<br>");
+        document.write("<br>");
+
+        // to show all the properties of the object we use for in loop
+
+        for (let features in Motwani) {
+            document.write(Motwani[features] + '<br>')
+        }
+
+        // to show the properties without the method coming in the list
+
+        document.write("<br>");
+        document.write("<br>");
+
+        for (let qualities in Motwani2) {
+            if (typeof Motwani2[qualities] !== 'function') {
+                document.write(Motwani2[qualities] + '<br>')
+            }
+        }
+        </script>
+      </body>
+    </html>
